@@ -617,8 +617,8 @@ footer {
 
 /* ================== Responsive ================== */
 @media (max-width: 992px) {
-    .hero-container { flex-direction: column; text-align: center; }
-    .hero-subtitle { margin: 0 auto 40px; }
+    .hero-container { flex-direction: column; text-align: center; gap: 20px; }
+    .hero-subtitle { margin: 0 auto 30px; }
     .hero-buttons { justify-content: center; }
     .cta-container { flex-direction: column; text-align: center; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -635,14 +635,19 @@ footer {
         font-size: 15vw;
         top: 10%;
     }
-    .badge-hero { font-size: 0.8rem; padding: 6px 12px; }
-    .hero { padding: 120px 0 60px; }
+    .badge-hero { font-size: 0.8rem; padding: 6px 12px; margin-bottom: 15px; }
+    .hero { padding: 100px 0 40px; }
+    .mockup-body { padding: 20px; }
 }
 
 @media (max-width: 480px) {
-    .hero-title { font-size: 1.8rem; }
-    .hero-subtitle { font-size: 1rem; }
-    .mockup-body h2 { font-size: 2rem !important; }
-    .mockup-body i { font-size: 2.5rem !important; }
-    .status-bar { flex-direction: column; text-align: center; gap: 8px; }
+    .hero-title { font-size: 1.8rem; margin-bottom: 15px; }
+    .hero-subtitle { font-size: 0.95rem; }
+    .mockup-body h2 { font-size: 2rem !important; margin: 5px 0 !important; }
+    .mockup-body h3 { font-size: 1.1rem; margin-bottom: 10px; }
+    .mockup-body i.bi-wifi { font-size: 2rem !important; }
+    .status-bar { padding: 12px; margin-bottom: 15px; gap: 10px; }
+    .status-icon { font-size: 1.5rem; }
+    .status-bar strong { font-size: 0.95rem; }
+    .status-bar p { font-size: 0.75rem; }
 }
