@@ -338,15 +338,22 @@ h1, h2, h3, h4, h5 {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
 
+@keyframes float-card {
+    0% { transform: perspective(1000px) rotateY(-5deg) rotateX(3deg) translateY(0); }
+    50% { transform: perspective(1000px) rotateY(2deg) rotateX(-2deg) translateY(-15px); }
+    100% { transform: perspective(1000px) rotateY(-5deg) rotateX(3deg) translateY(0); }
+}
+
 .mockup-card {
     width: 100%;
     max-width: 450px;
     overflow: hidden;
-    transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+    animation: float-card 6s infinite ease-in-out;
     transition: var(--transition);
 }
 .mockup-card:hover {
-    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    animation-play-state: paused;
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-5px);
 }
 .mockup-header {
     background: rgba(241, 245, 249, 0.8);
@@ -615,9 +622,6 @@ footer {
     .hero-buttons { justify-content: center; }
     .cta-container { flex-direction: column; text-align: center; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
-    .mockup-card {
-        transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-    }
 }
 
 @media (max-width: 768px) {
