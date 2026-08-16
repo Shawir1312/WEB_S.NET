@@ -44,6 +44,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -164,8 +165,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .logo img {
-    height: 40px;
+    height: 45px;
     display: block;
+    mix-blend-mode: multiply;
 }
 
 .nav-links {
@@ -247,6 +249,36 @@ h1, h2, h3, h4, h5 {
 @keyframes float {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(30px, 30px) scale(1.1); }
+}
+
+.bg-infrastructure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/images/infra-bg.png') no-repeat center bottom;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+
+.bg-text-3t {
+    position: absolute;
+    top: 20%;
+    right: -2%;
+    font-size: 8vw;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: transparent;
+    -webkit-text-stroke: 3px var(--primary-light);
+    opacity: 0.3;
+    z-index: 0;
+    white-space: nowrap;
+    pointer-events: none;
 }
 
 .hero-container {
@@ -537,9 +569,12 @@ footer {
     margin-bottom: 60px;
 }
 .footer-logo {
-    height: 40px;
+    height: 50px;
     margin-bottom: 20px;
-    filter: brightness(0) invert(1);
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-block;
 }
 .footer-brand p { margin-bottom: 24px; line-height: 1.8; }
 .social-links { display: flex; gap: 16px; }
@@ -580,12 +615,30 @@ footer {
     .hero-buttons { justify-content: center; }
     .cta-container { flex-direction: column; text-align: center; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    .mockup-card {
+        transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    }
 }
 
 @media (max-width: 768px) {
     .nav-links, .nav-actions { display: none; }
     .mobile-menu-btn { display: block; }
-    .hero-title { font-size: 2.5rem; }
+    .hero-title { font-size: 2.2rem; }
     .footer-grid { grid-template-columns: 1fr; }
     .price-card.popular { transform: scale(1); }
+    
+    .bg-text-3t {
+        font-size: 15vw;
+        top: 10%;
+    }
+    .badge-hero { font-size: 0.8rem; padding: 6px 12px; }
+    .hero { padding: 120px 0 60px; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 1.8rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .mockup-body h2 { font-size: 2rem !important; }
+    .mockup-body i { font-size: 2.5rem !important; }
+    .status-bar { flex-direction: column; text-align: center; gap: 8px; }
 }
